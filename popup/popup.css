@@ -1,1 +1,32 @@
+html, body {
+    background-color: #fff;
+    font-size: 16px;
+    margin: 0;
+    /* changed from 550px */
+    min-width: 550px;
+    position: left;
+}
 
+body {
+    overflow: scroll;
+    /* padding changed from 2.5 */
+    padding: 2.5 em; 
+}
+    body.loading * {
+        display: none !important;
+    }
+    body.loading::before {
+        background-image: url(chrome-extension://__MSG_@@extension_id__/images/loader.gif);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 75px;
+        content: '';
+        display: block !important;
+        height: 200px;
+    }
+    body[data-probe-message] * {
+        display: none !important;
+    }
+    body[data-probe-message]::before {
+        content: attr(data-probe-message);
+    }
