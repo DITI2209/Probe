@@ -1,1 +1,252 @@
+﻿/* latin */
+@font-face {
+	font-family: 'Noto Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(chrome-extension://__MSG_@@extension_id__/fonts/noto-sans-latin.woff2) format('woff2');
+}
+
+@font-face {
+	font-family: 'Material Icons';
+	font-style: normal;
+	font-weight: 400;
+	src: url(chrome-extension://__MSG_@@extension_id__/fonts/material-icons.woff2) format('woff2');
+}
+  
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+}
+
+probe,
+probe *,
+.probe,
+.probe * {
+	box-sizing: content-box !important;
+	border: 0 !important;
+	/* changed from  #333*/
+	color: #333;
+	cursor: default !important;
+	font: normal 16px 'Noto Sans', sans-serif;
+	line-height: 1.35 !important;
+	opacity: 1 !important;
+	-webkit-font-smoothing: unset !important;
+	text-align: left !important;
+	text-size-adjust: none !important;
+	text-rendering: unset !important;
+}
+probe br,
+.probe br {
+	display: none !important;
+}
+
+/* icon on page */
+
+probe {
+	background: #fff !important;
+
+	/* changed from 20px to make a circle*/
+	border-radius: 50px !important;
+
+	/* changed from bottom */ 
+	bottom: 1.5em ; /* removed !important */
+
+	box-shadow: 0px 2px 11px -2px #000 !important;
+	display: inline-block !important;
+	/* changed from 32px */ 
+	height: 36px !important;
+
+	margin: 0 !important;
+	overflow: auto !important;
+	padding: 1em !important;
+	position: fixed !important;
+
+	/* changed from right to left bottom*/ 
+	left: 1em !important;
+
+	/* removed  */
+	transition: 0.1s !important;
+	width: 32px !important;
+	z-index: 999999 !important;
+}
+	probe[data-probe-message] {
+		display: none !important;
+	}
+	probe:not(:hover) * {
+		display: none !important;
+	}
+	probe:not(:hover) probe-span {
+		display: block !important;
+	}
+	probe:hover {
+		height: 75vh !important;
+		/* border radius to make it into square */
+		border-radius: 20px !important;
+		min-width: 450px !important;
+		padding: 2.5em !important;
+		transition: 1s !important;
+		width: calc(50% - 3em) !important;
+	}
+
+probe-h1, probe-h2 {
+	display: block !important;
+	margin: 0 !important;
+	opacity: 1 !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	text-overflow: ellipsis !important;
+	transition: all 2s ease !important;
+	white-space: nowrap !important;
+	z-index: 999 !important;
+}
+
+probe-h1 {
+	font-size: 2.5em !important;
+	position: absolute !important;
+	top: 32px;
+	left: 74px;
+	right: 24px;
+}
+
+probe-h2 {
+	font-weight: bold !important;
+	margin: 1em 0 0.5em 0 !important;
+}
+
+	probe-h2:first-of-type {
+		margin-top: 92px !important;
+	}
+
+probe-insight-subtitle {
+	/* changed from #000 */
+	background: #000 !important;
+	border-radius: 3px !important;
+
+	/* changed from #fff */
+	color: #fff !important;
+	display: block !important;
+	font-size: 0.65em !important;
+	font-style: italic !important;
+	height: 15px !important;
+	line-height: 1.3 !important;
+	padding: 0 32px !important;
+	position: absolute !important;
+	top: 93px !important;
+	left: 25px !important;
+	right: 24px !important;
+	z-index: 2000 !important;
+}
+
+probe-bg {
+	display: block !important;
+	height: 140px !important;
+	overflow: hidden !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+}
+
+	probe-bg::before {
+		/* changed from #e1e1e1 */
+		background: #e1e1e1  !important;
+		content: '' !important;
+		display: block !important;
+		position: absolute !important;
+		left: -100px !important;
+		top: -100px !important;
+		transform: rotate(45deg) !important;
+		width: 150px !important;
+		height: 300px !important;
+		z-index: 100 !important;
+	}
+
+	probe-bg::after {
+
+		/* changed from black */
+		color: black !important;
+		content: 'P' !important;
+		font-size: 100px !important;
+		font-weight: 600 !important;
+		left: 20px !important;
+		opacity: 1 !important;
+		position: absolute !important;
+		top: -20px !important;
+		z-index: 1000 !important;
+	}
+
+probe-span {
+	display: none !important;
+	font-weight: 600 !important;
+	font-size: 2.65em !important;
+	line-height: .75 !important;
+	text-align: center !important;
+}
+
+probe-description {
+	display: block !important;
+}
+
+probe-h2[data-count]::after,
+probe-topic-ul probe-li::after {
+	content: attr(data-count) !important;
+	border: initial !important;
+	/* changed from #ccc */
+	border-left: 1px solid #ccc  !important;
+	border-width: 1px !important;
+
+	/* changed from #bbb */
+	color: #bbb !important;
+	font-weight: normal !important;
+	margin: 0 0 0 0.5em !important;
+	padding: 0 0 0 0.5em !important;
+}
+
+probe-topic-ul {
+	display: block !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+	probe-topic-ul probe-li {
+		/* changed from #eee */
+		background: #eee !important;
+		border-radius: 5px !important;
+		/* changed from #555 */
+		color: #555 !important;
+		display: inline-block !important;
+		font-size: 0.65em !important;
+		font-weight: bold !important;
+		list-style-type: none !important;
+		margin: 0.25em !important;
+		padding: 0.55em 0.75em !important;
+		text-transform: uppercase !important;
+	}
+
+probe-ul {
+	display: block !important;
+	list-style-type: disc !important;
+	margin-left: 2em !important;
+	padding: initial !important;
+}
+
+	probe-ul probe-li {
+		display: list-item !important;
+	}
+
+		probe-ul probe-li:not(:last-child) {
+			margin-bottom: 0.3em !important;
+		}
 

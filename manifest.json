@@ -1,0 +1,50 @@
+{
+  "name": "probe",
+  "description": "Summariztion tool for Chrome",
+  "version": "1.0",
+  "manifest_version": 3,
+  "options_page": "options/options.html",
+  "web_accessible_resources": [
+    {
+      "resources": [ "fonts/*.woff2", "images/*.*" ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "preload.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "<all_urls>" ],
+      "run_at": "document_idle",
+      "css": [
+        "style.css"
+      ],
+      "js": [
+        "./libraries/scrape_page.js",
+        "./src/nlp.js",
+        "./src/processor.js",
+        "./src/view.js",
+        "main.js"
+      ]
+    }
+  ],
+  "permissions": [ "storage", "activeTab", "scripting" ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "/images/icon16x16.png",
+      "32": "/images/icon32x32.png",
+      "48": "/images/icon48x48.png",
+      "128": "/images/icon128x128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/icon16x16.png",
+    "32": "/images/icon32x32.png",
+    "48": "/images/icon48x48.png",
+    "128": "/images/icon128x128.png"
+  }
+}
