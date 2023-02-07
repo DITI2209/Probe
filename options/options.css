@@ -1,0 +1,155 @@
+body {
+  font-family: 'Noto sans', sans-serif;
+  padding: 40px;
+}
+  body::before {
+    /* changed from rgb(200,200,200) */
+    color: rgb(200,200,200);
+    content:  'P';
+    font-size: 310px !important;
+    font-weight: 600;
+    left: 20px;
+    position: absolute;
+    top: -90px !important;
+    z-index: -1;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    height: 500px;
+    width: 500px;
+    /* changed from #e1e1e1 */
+    background: #e1e1e1;
+    transform: rotate(45deg);
+    top: -250px;
+    left: -250px;
+    z-index: -2;
+  }
+
+#source {
+  position: absolute;
+  right: 80px;
+  top: 120px;
+  width: 35px;
+  height: 35px;
+  transform: scale(1.5);
+  opacity: 0.3;
+  display: inline-block;
+  z-index: 10;
+}
+    #source:hover {
+      opacity: 0.5;
+      transition: all .2s ease;
+    }
+
+svg {
+  z-index: -1;
+}
+
+div.container {
+  z-index: 1;
+}
+
+h1, h2 {
+  user-select: none;
+}
+
+h1 {
+  font-size: 100px;
+  margin: 0;
+  font-weight: 100;
+  font-style: italic;
+}
+
+h2 {
+  margin: 0;
+  font-size: 12px;
+  margin-left: 20px;
+  margin-top: -20px;
+}
+
+div.card {
+  /* changed from rgba(255,255,255,0.7) */
+  background: rgba(255,255,255,0.7);
+  padding: 1em;
+  margin: 2em;
+  /* changed from black */
+  box-shadow: 0px 1px 15px -10px black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+label > span {
+  font-weight: 100;
+  font-size: 16px;
+  vertical-align: middle;
+  user-select: none;
+}
+
+li > span {
+  display: block;
+  margin-left: 25px;
+  padding: 5px;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+slider, input {
+  vertical-align: middle;
+}
+
+ul#about {
+  padding: 0 3em 0 3em;
+}
+ul#about > li {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+span.icon {
+  font-family: 'Material icons' !important;
+  user-select: none;
+  font-size: 24px;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-top: -2px;
+  display: inline-block;
+}
+
+div.card > span {
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+
+
+/* cant see the use of this code snippet */
+th {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px;
+}
+td {
+  padding: 10px;    
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 1px solid rgba(0,0,0,0.1)
+}
+  td.score, td.retrieved {
+    text-align: center;
+    font-size: 18px;
+  }
+tr.good {
+  background: #1ac91a59;
+}
+tr.bad {
+  background: #c91a1a59;
+}
